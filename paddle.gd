@@ -14,8 +14,22 @@ func _ready ():
 
 func _process (delta):
 	var input_vector =Vector2.ZERO
+	
+	if is_ai:
+		input_vector =  get_ai_movement()
+	else:
+		input_vector = get_player_input()
 
-if is_ai:
-	input_vector = get_ai_movement()
-else 
-input_vector = get_player_input()
+	position += input_vector * speed * delta
+	
+	#keep paddle within screen bounds
+	var viewport_rect =get_viewport_rect()
+	position.x = clamp(position.x,50,viewport_rect.size.x -50)
+	position.y = clamp(position.y,50,viewport_rect.size.y -50)
+	
+func get_player_input() -> Vector2:
+	var input = Vector2.ZERO
+
+	if player_number ==1:
+		input.x = Input.get_axis(p1_left,p1_right)
+		input
