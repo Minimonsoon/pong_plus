@@ -32,4 +32,4 @@ func get_player_input() -> Vector2:
 
 	if player_number ==1:
 		input.x = Input.get_axis(p1_left,p1_right)
-		input
+		input.y
