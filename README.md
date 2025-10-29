@@ -30,6 +30,6 @@ If you find any bugs or want to suggest improvements please reach out to me by d
 
 ## Tech Stack
 
--Game Engine: Godot 4
--Programming language: GDScript
+- Game Engine: Godot 4
+- Programming language: GDScript
 
